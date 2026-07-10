@@ -1,0 +1,22 @@
+{
+  "name": "DENDRO MARKET Public API Collection",
+  "version": "2.0-training",
+  "base_url": "http://127.0.0.1:5009",
+  "description": "Colección parcial de endpoints publicados para la práctica. No garantiza que sea inventario completo.",
+  "endpoints": [
+    {"method":"GET", "path":"/api/health", "auth":false},
+    {"method":"POST", "path":"/api/login", "auth":false},
+    {"method":"GET", "path":"/api/me", "auth":true},
+    {"method":"GET", "path":"/api/catalog", "auth":false},
+    {"method":"GET", "path":"/api/my/orders", "auth":true},
+    {"method":"GET", "path":"/api/orders/search?q=cloud", "auth":true},
+    {"method":"GET", "path":"/api/orders/{order_ref}", "auth":true},
+    {"method":"GET", "path":"/api/billing/invoices/{invoice_ref}", "auth":true},
+    {"method":"GET", "path":"/api/certificates/{cert_ref}", "auth":true},
+    {"method":"GET", "path":"/api/support/tickets", "auth":true},
+    {"method":"GET", "path":"/api/support/tickets/{ticket_id}", "auth":true},
+    {"method":"POST", "path":"/api/support/tickets/{ticket_id}/messages", "auth":true},
+    {"method":"PATCH", "path":"/api/account/profile", "auth":true},
+    {"method":"GET", "path":"/api/org/reports/monthly?org_id={id}", "auth":true}
+  ]
+}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}DENDRO MARKET | Dashboard{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <div class="eyebrow">Portal del usuario</div>
+    <h1>Hola, {{ user.display_name }}</h1>
+    <p>Rol: <b>{{ user.role }}</b> · Organización: {{ user.organization }}</p>
+  </div>
+  <a class="btn-secondary" href="/docs/api_public_collection.json">Colección pública API</a>
+</section>
+<section class="grid-2">
+  <div class="panel">
+    <h2>Mis órdenes</h2>
+    {% for o in my_orders %}
+    <div class="row-card">
+      <div><b>{{ o.public_ref }}</b><span>{{ o.course }} · {{ o.status }}</span></div>
+      <code>{{ o.encoded_ref }}</code>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="panel">
+    <h2>Mis certificados</h2>
+    {% for c in my_certs %}
+    <div class="row-card">
+      <div><b>{{ c.certificate_code }}</b><span>{{ c.course }}</span></div>
+      <code>{{ c.encoded_ref }}</code>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<section class="panel">
+  <h2>Mis tickets</h2>
+  {% for t in my_tickets %}
+  <div class="row-card">
+    <div><b>#{{ t.id }} · {{ t.subject }}</b><span>{{ t.status }}</span></div>
+    <span class="badge">soporte</span>
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}

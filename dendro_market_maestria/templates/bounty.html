@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}DENDRO MARKET | Bug Bounty{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <div class="eyebrow">Programa privado de seguridad</div>
+    <h1>DENDRO MARKET Bug Bounty</h1>
+    <p>Evalúa control de acceso, autorización por objeto, autorización por función y abuso de flujos de negocio.</p>
+  </div>
+</section>
+<section class="grid-2">
+  <div class="panel">
+    <h2>Alcance autorizado</h2>
+    <code>http://127.0.0.1:5009</code>
+    <code>http://localhost:5009</code>
+    <p>No se permite DoS, fuerza bruta masiva, explotación fuera del laboratorio ni ataques a terceros.</p>
+  </div>
+  <div class="panel accent-panel">
+    <h2>Entrega mínima</h2>
+    <p>Reporta tres hallazgos válidos. Debe existir request, respuesta, impacto, severidad y mitigación.</p>
+    <a class="btn-primary" href="/docs/GUIA_ALUMNO.md">Abrir guía del alumno</a>
+  </div>
+</section>
+<section class="cards">
+  <article class="card"><h3>IDOR/BOLA</h3><p>Recursos que no pertenecen al usuario autenticado.</p></article>
+  <article class="card"><h3>BFLA</h3><p>Funciones administrativas ejecutables por usuarios comunes.</p></article>
+  <article class="card"><h3>Mass Assignment</h3><p>Campos sensibles aceptados desde el cliente.</p></article>
+  <article class="card"><h3>Tenant Bypass</h3><p>Organización o alcance confiado al request.</p></article>
+</section>
+{% endblock %}

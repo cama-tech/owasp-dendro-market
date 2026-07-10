@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}DENDRO MARKET | Inicio{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Laboratorio maestría · Bug bounty privado</div>
+    <h1>DENDRO MARKET</h1>
+    <p>Marketplace académico simulado para investigar fallas de control de acceso en APIs modernas.</p>
+    <div class="actions">
+      <a class="btn-primary" href="/bounty">Ver misión</a>
+      <a class="btn-secondary" href="/login">Ingresar al portal</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <span class="status-dot"></span>
+    <h3>Programa privado</h3>
+    <p>La empresa cree que pedir login en todos los endpoints es suficiente. Tu equipo debe comprobar si la autorización está bien implementada.</p>
+    <div class="metric-grid">
+      <div><b>A01</b><span>OWASP</span></div>
+      <div><b>BOLA</b><span>API</span></div>
+      <div><b>BFLA</b><span>Roles</span></div>
+    </div>
+  </div>
+</section>
+<section class="cards">
+  {% for course in courses.values() %}
+  <article class="card">
+    <span class="tag">{{ course.tag }}</span>
+    <h3>{{ course.title }}</h3>
+    <p>Nivel {{ course.level }} · SKU {{ course.sku }}</p>
+    <strong>S/ {{ course.price }}</strong>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}DENDRO MARKET | Admin{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <div class="eyebrow">Admin console</div>
+    <h1>Panel administrativo</h1>
+    <p>Vista legítima para el usuario admin.</p>
+  </div>
+</section>
+<section class="grid-2">
+  <div class="panel"><h2>Usuarios</h2><pre>{{ users | tojson(indent=2) }}</pre></div>
+  <div class="panel"><h2>Reembolsos</h2><pre>{{ refunds | tojson(indent=2) }}</pre></div>
+</section>
+<script src="{{ url_for('static', filename='js/admin_console.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}DENDRO MARKET | Login{% endblock %}
+{% block content %}
+<section class="form-wrap">
+  <div class="form-card">
+    <h2>Ingreso al portal</h2>
+    <p class="muted">Usa las cuentas de entrenamiento entregadas por el docente.</p>
+    {% if error %}<div class="alert">{{ error }}</div>{% endif %}
+    <form method="post">
+      <label>Usuario</label>
+      <input name="username" autocomplete="off" placeholder="alice">
+      <label>Contraseña</label>
+      <input type="password" name="password" placeholder="••••••••">
+      <button class="btn-primary" type="submit">Ingresar</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

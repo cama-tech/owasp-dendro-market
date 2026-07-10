@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}DENDRO MARKET | Catálogo{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div>
+    <div class="eyebrow">Marketplace</div>
+    <h1>Catálogo profesional</h1>
+    <p>Cursos ficticios para construir tráfico y objetos de negocio dentro del laboratorio.</p>
+  </div>
+</section>
+<section class="cards">
+  {% for course in courses.values() %}
+  <article class="card big-card">
+    <span class="tag">{{ course.tag }}</span>
+    <h3>{{ course.title }}</h3>
+    <p>Programa {{ course.level }} · SKU {{ course.sku }}</p>
+    <strong>S/ {{ course.price }}</strong>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}
